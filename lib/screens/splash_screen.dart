@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/screens/home_screen.dart';
+import 'package:spotify_clone/screens/list_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     Future.delayed(const Duration(seconds: 2)).then((value) => Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const HomeScreen())));
+        context, MaterialPageRoute(builder: (context) => HomeScreen())));
     super.initState();
   }
 

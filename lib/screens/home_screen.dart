@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/screens/list_screen.dart';
+
+import '../widgets/custom_top_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,43 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             top: true,
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'İndirim Tanıtım',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700),
-                    ),
-                    Row(
-                      children: const [
-                        Icon(
-                          Icons.notifications_outlined,
-                          color: Colors.white,
-                          size: 29,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        // Icon(
-                        //   Icons.watch_outlined,
-                        //   color: Colors.white,
-                        //   size: 29,
-                        // ),
-                        // SizedBox(
-                        //   width: 10,
-                        // ),
-                        Icon(
-                          Icons.settings,
-                          color: Colors.white,
-                          size: 29,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                const CustomTopBar(),
                 const SizedBox(
                   height: 25,
                 ),
@@ -115,95 +82,105 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                Row(
-                  children: [
-                    Container(
-                      height: 60,
-                      width: 170,
-                      decoration: BoxDecoration(
-                          color: Colors.grey[900],
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10)),
-                                gradient: LinearGradient(
-                                    colors: [Colors.indigo, Colors.white])),
-                            child: const Center(
-                              child: Icon(
-                                Icons.favorite,
-                                color: Colors.white,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ListViewPage(),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 170,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[900],
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 60,
+                              width: 60,
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10)),
+                                  gradient: LinearGradient(
+                                      colors: [Colors.indigo, Colors.white])),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.favorite,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  'Favoriler',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ],
+                            const SizedBox(
+                              width: 20,
                             ),
-                          )
-                        ],
+                            Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    'Favoriler',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      height: 60,
-                      width: 170,
-                      decoration: BoxDecoration(
-                          color: Colors.grey[900],
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10)),
-                                image: DecorationImage(
-                                    image: AssetImage('assets/education.jpg'))),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  'Eğitim',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700),
-                                )
-                              ],
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        height: 60,
+                        width: 170,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[900],
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 60,
+                              width: 60,
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10)),
+                                  image: DecorationImage(
+                                      image:
+                                          AssetImage('assets/education.jpg'))),
                             ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    'Eğitim',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 15,

@@ -17,11 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     Future.delayed(const Duration(seconds: 2)).then((value) => Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ContantInfoPage(
-                  title: 'Aaa',
-                ))));
+        context, MaterialPageRoute(builder: (context) => HomeScreen())));
     super.initState();
   }
 

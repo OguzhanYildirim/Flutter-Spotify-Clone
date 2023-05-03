@@ -40,6 +40,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 25,
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 300,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage('assets/education.jpg'))),
+                  ),
+                ),
                 Row(
                   children: [
                     Container(
@@ -86,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const ListViewPage(),
+                        builder: (context) => ListViewPage(category: "Favori"),
                       ),
                     );
                   },
@@ -140,43 +151,53 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        height: 60,
-                        width: 170,
-                        decoration: BoxDecoration(
-                            color: Colors.grey[900],
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      bottomLeft: Radius.circular(10)),
-                                  image: DecorationImage(
-                                      image:
-                                          AssetImage('assets/education.jpg'))),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ListViewPage(category: 'Eğitim'),
                             ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text(
-                                    'Eğitim',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w700),
-                                  )
-                                ],
+                          );
+                        },
+                        child: Container(
+                          height: 60,
+                          width: 170,
+                          decoration: BoxDecoration(
+                              color: Colors.grey[900],
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 60,
+                                width: 60,
+                                decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10),
+                                        bottomLeft: Radius.circular(10)),
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/education.jpg'))),
                               ),
-                            )
-                          ],
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Text(
+                                      'Eğitim',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w700),
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       )
                     ],

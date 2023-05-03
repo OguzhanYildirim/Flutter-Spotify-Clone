@@ -1,11 +1,28 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:spotify_clone/widgets/custom_app_bar.dart';
 
-List<Icon> icons = [
-  Icon(Icons.favorite, color: Colors.red),
-  Icon(Icons.star, color: Colors.yellow),
-  Icon(Icons.music_note, color: Colors.blue),
-  Icon(Icons.camera_alt, color: Colors.grey),
+List circleIconsAttirbutes = [
+  [
+    Icon(
+      Icons.location_on,
+      color: Colors.white,
+    ),
+    Color.fromARGB(255, 234, 75, 106)
+  ],
+  [
+    Icon(Icons.local_phone_rounded, color: Colors.white),
+    Color.fromARGB(255, 38, 192, 225)
+  ],
+  [
+    Icon(Icons.account_circle, color: Colors.white),
+    Color.fromARGB(255, 253, 150, 66)
+  ],
+  [
+    Icon(Icons.camera_alt, color: Colors.white),
+    Color.fromARGB(255, 66, 206, 145)
+  ]
 ];
 
 class ContantInfoPage extends StatelessWidget {
@@ -23,16 +40,21 @@ class ContantInfoPage extends StatelessWidget {
     return Scaffold(
         appBar: CustomAppBar('aaa'),
         body: Container(
-          decoration: BoxDecoration(
-            color: Color.fromARGB(255, 0, 0, 0), // Background color
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 248, 248, 248), // Background color
             // Rounded border
           ),
           child: ListView.builder(
-            itemCount: 5, //items.length,
+            itemCount: 4, //items.length,
             itemBuilder: (BuildContext context, int index) {
               return Padding(
-                padding: const EdgeInsets.only(bottom: 2),
-                child: ContactListTile(),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: ContactListTile(
+                  text: "text",
+                  circleIcon: circleIconsAttirbutes[index][0],
+                  circleColor: circleIconsAttirbutes[index][1],
+                ),
               );
             },
           ),
@@ -41,46 +63,59 @@ class ContantInfoPage extends StatelessWidget {
 }
 
 class ContactListTile extends StatelessWidget {
-  const ContactListTile({Key? key}) : super(key: key);
+  Icon circleIcon;
+  Color circleColor;
+  String text;
+  ContactListTile({
+    Key? key,
+    required this.circleIcon,
+    required this.circleColor,
+    required this.text,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-    final containerWidth = mediaQuery.size.width;
-    final containerHeight = mediaQuery.size.height / 8;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.blueGrey,
+            spreadRadius: 2,
+            blurRadius: 2,
+            offset: Offset(2, 2), // changes position of shadow
+          ),
+        ],
         borderRadius: BorderRadius.circular(3),
         color: Colors.white,
       ),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Container(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          children: [
+            Container(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 35, 20, 177),
+                color: circleColor,
                 borderRadius: BorderRadius.circular(16),
               ),
               child:
-                  Padding(padding: const EdgeInsets.all(20), child: icons[0]),
+                  Padding(padding: const EdgeInsets.all(20), child: circleIcon),
             ),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              "somethink.com" * 5,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
+            const SizedBox(width: 20),
+            Expanded(
+              child: Text(
+                text,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

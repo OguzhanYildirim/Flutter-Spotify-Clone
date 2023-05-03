@@ -74,7 +74,7 @@ class CustomCardItem extends StatelessWidget {
                     item.desc,
                     style: const TextStyle(color: Colors.grey, fontSize: 15),
                   ),
-                  SizedBox(width: 30),
+                  const SizedBox(width: 30),
                   Text(
                     item.price,
                     style: const TextStyle(color: Colors.white, fontSize: 30),

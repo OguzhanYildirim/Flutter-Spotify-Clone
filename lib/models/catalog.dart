@@ -3,7 +3,7 @@ class CatalogModel {
     Item(
         id: 2,
         name: "Partido Partido Partidoooooooo",
-        desc: "Sultanhisar",
+        desc: "Eğitim",
         price: "%30",
         color: "#33505a",
         image:
@@ -11,7 +11,7 @@ class CatalogModel {
     Item(
         id: 3,
         name: "Ovido",
-        desc: "Efeler",
+        desc: "Eğitim",
         price: "%15",
         color: "#33505a",
         image:
@@ -19,7 +19,7 @@ class CatalogModel {
     Item(
         id: 4,
         name: "Logitek",
-        desc: "Nazilli",
+        desc: "s",
         price: "%20",
         color: "#33505a",
         image:
@@ -27,7 +27,7 @@ class CatalogModel {
     Item(
         id: 5,
         name: "Validere",
-        desc: "Çine",
+        desc: "Eğitim",
         price: "%5",
         color: "#33505a",
         image:

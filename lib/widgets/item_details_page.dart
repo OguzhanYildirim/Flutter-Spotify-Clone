@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../core/constant/color/color.dart';
 import '../core/constant/style/style.dart';
+import '../models/catalog.dart';
 
 class ItemDetailsPage extends StatelessWidget {
-  const ItemDetailsPage({super.key});
+  final Item activeItem;
+  const ItemDetailsPage({super.key, required this.activeItem});
 
   @override
   Widget build(BuildContext context) {
@@ -52,17 +54,20 @@ class ItemDetailsPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const ProductNameAndPrice(),
+                      ProductNameAndPrice(
+                        name: activeItem.name,
+                        discount: activeItem.price,
+                      ),
                       const SizedBox(
                         height: 16,
                       ),
                       Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.location_on_outlined,
                             color: Colors.white,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Text('Size',
@@ -102,12 +107,12 @@ class ItemDetailsPage extends StatelessWidget {
                                     minimumSize: MaterialStateProperty.all(
                                         Size(size.width / 10, 50))),
                                 onPressed: () {},
-                                child: Icon(
+                                child: const Icon(
                                   Icons.favorite_outline,
                                   color: Colors.white,
                                 )),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           ElevatedButton(
@@ -234,7 +239,11 @@ class RectButton extends StatelessWidget {
 }
 
 class ProductNameAndPrice extends StatelessWidget {
-  const ProductNameAndPrice({
+  String name;
+  String discount;
+  ProductNameAndPrice({
+    required this.name,
+    required this.discount,
     Key? key,
   }) : super(key: key);
 
@@ -244,12 +253,12 @@ class ProductNameAndPrice extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
-          'Jogger Lilac',
+        Text(
+          name,
           style: AppStyle.h1Light,
         ),
         Text(
-          '\$15.00',
+          discount,
           style: AppStyle.h1Light
               .copyWith(color: AppColor.primary, fontWeight: FontWeight.w600),
         ),

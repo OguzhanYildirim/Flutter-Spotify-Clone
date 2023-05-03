@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 25,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(bottom: 20.0),
                   child: Container(
                     height: 300,
                     decoration: BoxDecoration(
@@ -380,176 +380,176 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  children: [
-                    // const CircleAvatar(
-                    //   radius: 30,
-                    //   backgroundImage: AssetImage('assets/adele.jpeg'),
-                    // ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        // Text(
-                        //   'Yeni Çıkanlar',
-                        //   style: TextStyle(color: Colors.grey, fontSize: 12),
-                        // ),
-                        Text('Yeni Eklenenler',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 21,
-                                fontWeight: FontWeight.bold)),
-                        SizedBox(
-                          height: 10,
-                        ),
-                      ],
-                    )
-                  ],
+                // Row(
+                //   children: [
+                // const CircleAvatar(
+                //   radius: 30,
+                //   backgroundImage: AssetImage('assets/adele.jpeg'),
+                // ),
+                const SizedBox(
+                  width: 10,
                 ),
+                //     Column(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: const [
+                //         // Text(
+                //         //   'Yeni Çıkanlar',
+                //         //   style: TextStyle(color: Colors.grey, fontSize: 12),
+                //         // ),
+                //         Text('Yeni Eklenenler',
+                //             style: TextStyle(
+                //                 color: Colors.white,
+                //                 fontSize: 21,
+                //                 fontWeight: FontWeight.bold)),
+                //         SizedBox(
+                //           height: 10,
+                //         ),
+                //       ],
+                //     )
+                //   ],
+                // ),
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 1.1,
-                  height: 200,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey[900]),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 200,
-                        width: 170,
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(15),
-                                bottomLeft: Radius.circular(15)),
-                            image: DecorationImage(
-                                image: AssetImage('assets/school.jpg'),
-                                fit: BoxFit.cover)),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'X Kurumu',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            '%10 indirim',
-                            style: TextStyle(color: Colors.grey, fontSize: 15),
-                          ),
-                          const SizedBox(
-                            height: 70,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              SizedBox(width: 20),
-                              Icon(
-                                Icons.favorite_outline,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 80),
-                              Icon(
-                                Icons.open_in_new_rounded,
-                                color: Colors.white,
-                              ),
-                              // CircleAvatar(
-                              //   backgroundColor: Colors.white,
-                              //   radius: 15,
-                              //   child: Center(
-                              //     child: Icon(
-                              //       Icons.open_in_full_outlined,
-                              //       color: Colors.black,
-                              //     ),
-                              //   ),
-                              // )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+                // Container(
+                //   width: MediaQuery.of(context).size.width / 1.1,
+                //   height: 200,
+                //   decoration: BoxDecoration(
+                //       borderRadius: BorderRadius.circular(15),
+                //       color: Colors.grey[900]),
+                //   child: Row(
+                //     children: [
+                //       Container(
+                //         height: 200,
+                //         width: 170,
+                //         decoration: const BoxDecoration(
+                //             borderRadius: BorderRadius.only(
+                //                 topLeft: Radius.circular(15),
+                //                 bottomLeft: Radius.circular(15)),
+                //             image: DecorationImage(
+                //                 image: AssetImage('assets/school.jpg'),
+                //                 fit: BoxFit.cover)),
+                //       ),
+                //       const SizedBox(
+                //         width: 15,
+                //       ),
+                //       Column(
+                //         mainAxisAlignment: MainAxisAlignment.center,
+                //         children: [
+                //           const Text(
+                //             'X Kurumu',
+                //             style: TextStyle(
+                //                 color: Colors.white,
+                //                 fontSize: 18,
+                //                 fontWeight: FontWeight.w600),
+                //           ),
+                //           const SizedBox(
+                //             height: 10,
+                //           ),
+                //           const Text(
+                //             '%10 indirim',
+                //             style: TextStyle(color: Colors.grey, fontSize: 15),
+                //           ),
+                //           const SizedBox(
+                //             height: 70,
+                //           ),
+                //           Row(
+                //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //             children: const [
+                //               SizedBox(width: 20),
+                //               Icon(
+                //                 Icons.favorite_outline,
+                //                 color: Colors.white,
+                //               ),
+                //               SizedBox(width: 80),
+                //               Icon(
+                //                 Icons.open_in_new_rounded,
+                //                 color: Colors.white,
+                //               ),
+                //               // CircleAvatar(
+                //               //   backgroundColor: Colors.white,
+                //               //   radius: 15,
+                //               //   child: Center(
+                //               //     child: Icon(
+                //               //       Icons.open_in_full_outlined,
+                //               //       color: Colors.black,
+                //               //     ),
+                //               //   ),
+                //               // )
+                //             ],
+                //           )
+                //         ],
+                //       )
+                //     ],
+                //   ),
+                // ),
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  children: const [
-                    Text(
-                      'Sık Ziyaret Edilenler',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 21,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 150,
-                        width: 150,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/a1.jpg'))),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/a2.jpeg'))),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/a3.jpeg'))),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        height: 150,
-                        width: 150,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/a4.jpeg'))),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                )
+                // Row(
+                //   children: const [
+                //     Text(
+                //       'Sık Ziyaret Edilenler',
+                //       style: TextStyle(
+                //           color: Colors.white,
+                //           fontSize: 21,
+                //           fontWeight: FontWeight.bold),
+                //     )
+                //   ],
+                // ),
+                // const SizedBox(
+                //   height: 15,
+                // ),
+                // SingleChildScrollView(
+                //   scrollDirection: Axis.horizontal,
+                //   child: Row(
+                //     children: [
+                //       Container(
+                //         height: 150,
+                //         width: 150,
+                //         decoration: const BoxDecoration(
+                //             image: DecorationImage(
+                //                 image: AssetImage('assets/a1.jpg'))),
+                //       ),
+                //       const SizedBox(
+                //         width: 15,
+                //       ),
+                //       Container(
+                //         height: 150,
+                //         width: 150,
+                //         decoration: const BoxDecoration(
+                //             image: DecorationImage(
+                //                 image: AssetImage('assets/a2.jpeg'))),
+                //       ),
+                //       const SizedBox(
+                //         width: 15,
+                //       ),
+                //       Container(
+                //         height: 150,
+                //         width: 150,
+                //         decoration: const BoxDecoration(
+                //             image: DecorationImage(
+                //                 image: AssetImage('assets/a3.jpeg'))),
+                //       ),
+                //       const SizedBox(
+                //         width: 15,
+                //       ),
+                //       Container(
+                //         height: 150,
+                //         width: 150,
+                //         decoration: const BoxDecoration(
+                //             image: DecorationImage(
+                //                 image: AssetImage('assets/a4.jpeg'))),
+                //       ),
+                //       const SizedBox(
+                //         width: 15,
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                // const SizedBox(
+                //   height: 15,
+                // )
               ],
             ),
           )

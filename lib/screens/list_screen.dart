@@ -19,19 +19,19 @@ class ListViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Iterable<Item> filtered =
     //     CatalogModel.items.where((element) => element.desc == category);
+    final filteredItems =
+        CatalogModel.items.where((item) => item.desc == category).toList();
     return Scaffold(
       backgroundColor: Colors.black,
       // ignore: prefer_const_constructors
       appBar: CustomAppBar("Title"),
       body: ListView.builder(
-          itemCount: CatalogModel.items.length,
+          itemCount: filteredItems.length,
           itemBuilder: (context, index) {
-            if (CatalogModel.items[index].desc == category) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 3),
-                child: CustomCardItem(item: CatalogModel.items[index]),
-              );
-            }
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 3),
+              child: CustomCardItem(item: filteredItems[index]),
+            );
           }),
     );
   }

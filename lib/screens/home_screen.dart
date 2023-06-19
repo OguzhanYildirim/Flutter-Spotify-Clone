@@ -14,19 +14,19 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        backgroundColor: Colors.black,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Ana Sayfa"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Ara"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: "Favoriler"),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   selectedItemColor: Colors.white,
+      //   unselectedItemColor: Colors.grey,
+      //   backgroundColor: Colors.black,
+      //   showSelectedLabels: false,
+      //   showUnselectedLabels: false,
+      //   items: const [
+      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: "Ana Sayfa"),
+      //     BottomNavigationBarItem(icon: Icon(Icons.search), label: "Ara"),
+      //     BottomNavigationBarItem(
+      //         icon: Icon(Icons.favorite), label: "Favoriler"),
+      //   ],
+      // ),
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
           child: Padding(
@@ -47,8 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage('assets/education.jpg'))),
+                            fit: BoxFit.scaleDown,
+                            image: AssetImage('assets/kamusen.png'))),
                   ),
                 ),
                 Row(
@@ -103,102 +103,62 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: Row(
                     children: [
-                      Container(
-                        height: 60,
-                        width: 170,
-                        decoration: BoxDecoration(
-                            color: Colors.grey[900],
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      bottomLeft: Radius.circular(10)),
-                                  gradient: LinearGradient(
-                                      colors: [Colors.indigo, Colors.white])),
-                              child: const Center(
-                                child: Icon(
-                                  Icons.favorite,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text(
-                                    'Favoriler',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                      // Container(
+                      //   height: 60,
+                      //   width: 170,
+                      //   decoration: BoxDecoration(
+                      //       color: Colors.grey[900],
+                      //       borderRadius: BorderRadius.circular(10)),
+                      //   child: Row(
+                      //     children: [
+                      //       Container(
+                      //         height: 60,
+                      //         width: 60,
+                      //         decoration: const BoxDecoration(
+                      //             borderRadius: BorderRadius.only(
+                      //                 topLeft: Radius.circular(10),
+                      //                 bottomLeft: Radius.circular(10)),
+                      //             gradient: LinearGradient(
+                      //                 colors: [Colors.indigo, Colors.white])),
+                      //         child: const Center(
+                      //           child: Icon(
+                      //             Icons.favorite,
+                      //             color: Colors.white,
+                      //           ),
+                      //         ),
+                      //       ),
+                      //       const SizedBox(
+                      //         width: 20,
+                      //       ),
+                      //       Center(
+                      //         child: Column(
+                      //           mainAxisAlignment: MainAxisAlignment.center,
+                      //           children: const [
+                      //             Text(
+                      //               'Favoriler',
+                      //               textAlign: TextAlign.center,
+                      //               style: TextStyle(
+                      //                   color: Colors.white,
+                      //                   fontSize: 12,
+                      //                   fontWeight: FontWeight.w700),
+                      //             ),
+                      //           ],
+                      //         ),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
+
+                      CategoryItem(
+                        categoryName: 'Araç',
+                        imageText: 'assets/togg.jpg',
                       ),
                       const SizedBox(
                         width: 20,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  ListViewPage(category: 'Eğitim'),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          height: 60,
-                          width: 170,
-                          decoration: BoxDecoration(
-                              color: Colors.grey[900],
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 60,
-                                width: 60,
-                                decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        bottomLeft: Radius.circular(10)),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/education.jpg'))),
-                              ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Text(
-                                      'Eğitim',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w700),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
+                      CategoryItem(
+                        categoryName: 'Eğitim',
+                        imageText: 'assets/education.jpg',
                       )
                     ],
                   ),
@@ -208,86 +168,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Row(
                   children: [
-                    Container(
-                      height: 60,
-                      width: 170,
-                      decoration: BoxDecoration(
-                          color: Colors.grey[900],
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10)),
-                                image: DecorationImage(
-                                    image: AssetImage('assets/shopping.jpg'))),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  'Alışveriş',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                    CategoryItem(
+                      categoryName: 'Alışveriş',
+                      imageText: 'assets/shopping.jpg',
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      height: 60,
-                      width: 170,
-                      decoration: BoxDecoration(
-                          color: Colors.grey[900],
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10)),
-                                image: DecorationImage(
-                                    image: AssetImage('assets/health.jpg'))),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  'Sağlık',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    )
+                    CategoryItem(
+                      categoryName: 'Sağlık',
+                      imageText: 'assets/health.jpg',
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -295,86 +186,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Row(
                   children: [
-                    Container(
-                      height: 60,
-                      width: 170,
-                      decoration: BoxDecoration(
-                          color: Colors.grey[900],
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10)),
-                                image: DecorationImage(
-                                    image: AssetImage('assets/suits.jpg'))),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  'Giyim',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                    CategoryItem(
+                      categoryName: 'Giyim',
+                      imageText: 'assets/clothes.jpg',
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      height: 60,
-                      width: 170,
-                      decoration: BoxDecoration(
-                          color: Colors.grey[900],
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10)),
-                                image: DecorationImage(
-                                    image: AssetImage('assets/togg.jpg'))),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  'Araç',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    )
+                    CategoryItem(
+                      categoryName: 'Araç',
+                      imageText: 'assets/car.jpg',
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -555,6 +377,61 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ]),
       )),
+    );
+  }
+}
+
+class CategoryItem extends StatelessWidget {
+  CategoryItem({
+    required this.categoryName,
+    required this.imageText,
+    super.key,
+  });
+  final String categoryName;
+  final String imageText;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => ListViewPage(category: categoryName),
+          ),
+        );
+      },
+      child: Container(
+        height: 60,
+        width: 170,
+        decoration: BoxDecoration(
+            color: Colors.grey[900], borderRadius: BorderRadius.circular(10)),
+        child: Row(
+          children: [
+            Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      bottomLeft: Radius.circular(10)),
+                  image: DecorationImage(image: AssetImage(imageText))),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(categoryName,
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.w700))
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

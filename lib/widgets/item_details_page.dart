@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../core/constant/color/color.dart';
 import '../core/constant/style/style.dart';
 import '../models/catalog.dart';
+import 'custom_app_bar.dart';
 
 class ItemDetailsPage extends StatelessWidget {
   final Item activeItem;
@@ -12,6 +13,7 @@ class ItemDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: CustomAppBar("Title"),
       backgroundColor: Colors.black,
       body: Stack(
         children: [
@@ -61,21 +63,7 @@ class ItemDetailsPage extends StatelessWidget {
                       const SizedBox(
                         height: 16,
                       ),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.location_on_outlined,
-                            color: Colors.white,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text('Size',
-                              style: AppStyle.text.copyWith(
-                                  color: Colors.white.withOpacity(.8),
-                                  fontSize: 24)),
-                        ],
-                      ),
+                      const locationTitle(),
                       const Spacing(),
                       Row(
                         children: const [
@@ -84,53 +72,56 @@ class ItemDetailsPage extends StatelessWidget {
                       ),
                       const Spacing(),
                       Text(
-                        'This is weekdays design-your go-to for all the latest trends, no matter who you are.',
+                        'This is weekdays design-your go-to for all the latest trends, no matter who you are.' *
+                            10,
                         style: AppStyle.bodyText.copyWith(color: Colors.white),
                       ),
                       const Spacing(),
                       const Spacing(),
-                      Row(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                border: Border.all(color: Colors.white)),
-                            child: ElevatedButton(
-                                style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(
-                                        Colors.transparent),
-                                    shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(16)),
-                                    ),
-                                    minimumSize: MaterialStateProperty.all(
-                                        Size(size.width / 10, 50))),
-                                onPressed: () {},
-                                child: const Icon(
-                                  Icons.favorite_outline,
-                                  color: Colors.white,
-                                )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          ElevatedButton(
-                              style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      AppColor.primary),
-                                  shape: MaterialStateProperty.all(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(16))),
-                                  minimumSize: MaterialStateProperty.all(
-                                      Size(size.width / 1.5, 50))),
-                              onPressed: () {},
-                              child: Text('İletişim Bilgileri',
-                                  style: AppStyle.h3
-                                      .copyWith(color: Colors.white))),
-                        ],
-                      )
+                      Center(child: contactPageButton(size: size))
+                      // Row(
+                      //   children: [
+                      // Container(
+                      //   decoration: BoxDecoration(
+                      //       borderRadius: BorderRadius.circular(16),
+                      //       border: Border.all(color: Colors.white)),
+                      //   child: ElevatedButton(
+                      //       style: ButtonStyle(
+                      //           backgroundColor: MaterialStateProperty.all(
+                      //               Colors.transparent),
+                      //           shape: MaterialStateProperty.all(
+                      //             RoundedRectangleBorder(
+                      //                 borderRadius:
+                      //                     BorderRadius.circular(16)),
+                      //           ),
+                      //           minimumSize: MaterialStateProperty.all(
+                      //               Size(size.width / 10, 50))),
+                      //       onPressed: () {},
+                      //       child: const Icon(
+                      //         Icons.favorite_outline,
+                      //         color: Colors.white,
+                      //       )),
+                      // ),
+                      // const SizedBox(
+                      //   width: 10,
+                      // ),
+                      //     ElevatedButton(
+                      //         style: ButtonStyle(
+                      //             backgroundColor: MaterialStateProperty.all(
+                      //                 AppColor.primary),
+                      //             shape: MaterialStateProperty.all(
+                      //                 RoundedRectangleBorder(
+                      //                     borderRadius:
+                      //                         BorderRadius.circular(16))),
+                      //             minimumSize: MaterialStateProperty.all(
+                      //                 Size(size.width * 0.8, 50))),
+                      //         onPressed: () {},
+                      //         child: Text('İletişim Bilgileri',
+                      //             style: AppStyle.h2.copyWith(
+                      //                 color: Colors.white,
+                      //                 fontWeight: FontWeight.w700))),
+                      //   ],
+                      // )
                     ],
                   ),
                 ),
@@ -138,6 +129,53 @@ class ItemDetailsPage extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class locationTitle extends StatelessWidget {
+  const locationTitle({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Icon(
+          Icons.location_on_outlined,
+          color: Colors.white,
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        Text('Size',
+            style: AppStyle.text
+                .copyWith(color: Colors.white.withOpacity(.8), fontSize: 24)),
+      ],
+    );
+  }
+}
+
+class contactPageButton extends StatelessWidget {
+  const contactPageButton({
+    super.key,
+    required this.size,
+  });
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(AppColor.primary),
+            shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16))),
+            minimumSize: MaterialStateProperty.all(Size(size.width * 0.8, 50))),
+        onPressed: () {},
+        child: Text('İletişim Bilgileri',
+            style: AppStyle.h2
+                .copyWith(color: Colors.white, fontWeight: FontWeight.w700)));
   }
 }
 

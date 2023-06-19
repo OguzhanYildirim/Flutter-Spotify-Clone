@@ -61,20 +61,22 @@ class CustomCardItem extends StatelessWidget {
                       width: containerWidth * 0.5,
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
-                        child: Text(
-                          item.name,
-                          overflow: TextOverflow.visible,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
+                        child: Center(
+                          child: Text(
+                            item.name,
+                            overflow: TextOverflow.visible,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600),
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: containerHeight * 0.1,
+                  height: containerHeight * 0.15,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,21 +96,21 @@ class CustomCardItem extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [
-                    SizedBox(width: 100),
-                    Icon(
-                      Icons.favorite_outline,
-                      color: Colors.white,
-                    ),
-                    SizedBox(width: 10),
-                    Icon(
-                      Icons.open_in_new_rounded,
-                      color: Colors.white,
-                    ),
-                  ],
-                )
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: const [
+                //     SizedBox(width: 100),
+                //     Icon(
+                //       Icons.favorite_outline,
+                //       color: Colors.white,
+                //     ),
+                //     SizedBox(width: 10),
+                //     Icon(
+                //       Icons.open_in_new_rounded,
+                //       color: Colors.white,
+                //     ),
+                //   ],
+                // )
               ],
             )
           ],
